@@ -52,7 +52,7 @@ if(extension_loaded('curl'))
 $parameters = array(
     "merchant"=> $apiKey,//required
     "callbackUrl"=> urlencode($callbackUrl),//required
-    "amount"=> 1000,//required
+    "amount"=> $paymentAmount,//required
 
     "orderId"=> $invoiceId,//optional
 
