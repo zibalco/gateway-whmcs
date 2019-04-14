@@ -39,13 +39,13 @@ function postToZibal($path, $parameters)
     return json_decode($response);
 }
 
-if (isset($_POST['success']) && isset($_POST['trackId']) && isset($_POST['orderId']) && isset($_GET['secure'])) {
+if (isset($_GET['success']) && isset($_GET['trackId']) && isset($_GET['orderId']) && isset($_GET['secure'])) {
 
 	$flag = FALSE;
 
-	$success       = @mysql_real_escape_string($_POST['success']);
-	$trackId      = @mysql_real_escape_string($_POST['trackId']);
-	$orderId = @mysql_real_escape_string($_POST['orderId']);
+	$success       = @mysql_real_escape_string($_GET['success']);
+	$trackId      = @mysql_real_escape_string($_GET['trackId']);
+	$orderId = @mysql_real_escape_string($_GET['orderId']);
 	$secure       = @mysql_real_escape_string($_GET['secure']);
 
 	$query = @mysql_query("select * from tblinvoices where id = '$orderId' AND status = 'Paid'");
