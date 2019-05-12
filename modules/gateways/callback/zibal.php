@@ -27,7 +27,7 @@ $success = FALSE;
  */
 function postToZibal($path, $parameters)
 {
-    $url = 'https://gateway.zibal.ir/'.$path;
+    $url = 'https://gateway.zibal.ir/v1/'.$path;
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
